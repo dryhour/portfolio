@@ -2753,6 +2753,7 @@ input, select, textarea {
 			overflow: hidden;
 			position: relative;
 			width: 40%;
+			height: 50%;
 		}
 
 			.tiles article .image {
@@ -2790,7 +2791,7 @@ input, select, textarea {
 				bottom: 0;
 				content: '';
 				display: block;
-				height: 75%;
+				height: 100%;
 				left: 0;
 				opacity: 0.85;
 				position: absolute;
@@ -2836,11 +2837,11 @@ input, select, textarea {
 			}
 			
 			.tiles article:nth-child(2n - 1):before {
-				background-color: #dbd9e8;
+				background-color: #252235;
 			}
 
 			.tiles article:nth-child(2n):before {
-				background-color: #252235;
+				background-color: #333047;
 			}
 
 			
