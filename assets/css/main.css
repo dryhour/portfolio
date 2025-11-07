@@ -2747,9 +2747,9 @@ input, select, textarea {
 			background-repeat: no-repeat;
 			background-size: cover;
 			cursor: default;
-			height: 30vh;
-			max-height: 30em;
-			min-height: 23em;
+			height: 20vh;
+			max-height: 20em;
+			min-height: 15em;
 			overflow: hidden;
 			position: relative;
 			width: 40%;
@@ -2836,11 +2836,11 @@ input, select, textarea {
 			}
 			
 			.tiles article:nth-child(2n - 1):before {
-				background-color: #252235;
+				background-color: #201d33;
 			}
 
 			.tiles article:nth-child(2n):before {
-				background-color: #9c98b8;
+				background-color: #1a1824;
 			}
 
 			
