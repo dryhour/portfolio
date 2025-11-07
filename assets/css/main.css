@@ -2835,11 +2835,11 @@ input, select, textarea {
 				width: 100%;
 			}
 			
-			.tiles article:nth-child(2n - 1) {
+			.tiles article:nth-child(2n - 1):before {
 				background-color: #dbd9e8;
 			}
 
-			.tiles article:nth-child(2n) {
+			.tiles article:nth-child(2n):before {
 				background-color: #252235;
 			}
 
