@@ -2165,6 +2165,11 @@ input, select, textarea {
 		display: inline-block;
 		position: relative;
 	}
+		#loop-image {
+			width: 100%;
+			object-fit: cover;
+			display: block;
+		  }
 
 		.image img {
 			display: block;
