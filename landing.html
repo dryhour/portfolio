@@ -64,38 +64,19 @@ I will showcase my top creations, along with my group, profile, and more!
 						<!-- Two -->
 							<section id="two" class="spotlights">
 								<section>
-									<a href="#" id="image" class="image">
+									<a href="#" id="image-link" class="image">
 										<img id="loop-image" src="" alt="" data-position="top center" />
 									</a>
 									
-									<script>
-									  const images = [
-										"1.webp",
-										"2.webp",
-										"3.webp",
-										"4.webp",
-										"5.webp",
-										"6.webp"
-									  ];
+									<script type="module">
+										import loop from './assets/js/images/loop-images.js';
 									
-									  let currentIndex = 0;
+										let images = ["1.webp","2.webp","3.webp","4.webp","5.webp","6.webp"];
+										let folder_name = 'infectafriend';
 									
-									  const imageElement = document.getElementById("loop-image");
-									  const linkElement = document.getElementById("image-link");
-									
-									  function showNextImage() {
-										const img = images[currentIndex];
-										imageElement.src = `images/infectafriend/${img}`;
-										linkElement.href = `images/infectafriend/${img}`;
-									
-										currentIndex = (currentIndex + 1) % images.length; // Loop back to start
-									  }
-									
-									  showNextImage();
-									
-									  setInterval(showNextImage, 3000);
+										loop(folder_name, images);
 									</script>
-									
+																	
 
 									<div class="content">
 										<div class="inner">
@@ -111,6 +92,35 @@ I will showcase my top creations, along with my group, profile, and more!
 										</div>
 									</div>
 								</section>
+
+								<section>
+									<a href="#" id="image-link" class="image">
+										<img id="loop-image" src="" alt="" data-position="top center" />
+									</a>
+									
+									<script type="module">									
+										images = ["1.webp","2.webp","3.webp","4.webp","5.webp","6.webp"];
+										folder_name = 'infectafriend';
+									
+										loop(folder_name, images);
+									</script>
+																	
+
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>[🧟] Infect A Friend!</h3>
+											</header>
+											<pre><code>-- Overview: This is the biggest game I've made on Roblox! 
+-- It consisted of analyzing retention graphs and gathering feedback from my audience.
+-- I put these together to create an "Infection Tag" inspired game with powerups!</code></pre>
+											<ul class="actions">
+												<li><a href="https://www.roblox.com/games/109061728776302/Infect-A-Friend" class="button">Play</a></li>
+											</ul>
+										</div>
+									</div>
+								</section>
+							
 							</section>
 
 					</div>
