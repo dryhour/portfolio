@@ -73,12 +73,35 @@ included ALL of the projects or games I'd worked on.*
 									
 									<script type="module">
 										import loop from './assets/js/images/loop-images.js';
-									
-										let images = ["1.webp","2.webp","3.webp","4.webp","5.webp","6.webp"];
-										let folder_name = 'infectafriend';
-									
-										loop(folder_name, images, "loop-image-1", "image-link-1", 3000);
-									</script>
+										
+										// Array of all loops
+										const loops = [
+											{
+												folder: "infectafriend",
+												images: ["1.webp","2.webp","3.webp","4.webp","5.webp","6.webp"],
+												imageId: "loop-image-1",
+												linkId: "image-link-1",
+												delay: 3000
+											},
+											{
+												folder: "nightmare",
+												images: ["1.webp","2.webp","3.webp"],
+												imageId: "loop-image-2",
+												linkId: "image-link-2",
+												delay: 3000
+											},
+											{
+												folder: "fnaf",
+												images: ["1.webp"],
+												imageId: "loop-image-3",
+												linkId: "image-link-3",
+												delay: 3000
+											}
+										];
+										
+										// Start all loops
+										loops.forEach(l => loop(l.folder, l.images, l.imageId, l.linkId, l.delay));
+									</script>										
 																	
 
 									<div class="content">
@@ -99,15 +122,7 @@ included ALL of the projects or games I'd worked on.*
 								<section>
 									<a href="#" id="image-link-2" class="image">
 										<img id="loop-image-2" src="" alt="" data-position="center" />
-									</a>
-									
-									<script type="module">									
-										images = ["1.webp","2.webp","3.webp"];
-										folder_name = 'nightmare';
-									
-										loop(folder_name, images, "loop-image-2", "image-link-2", 3000);
-									</script>
-																	
+									</a>						
 
 									<div class="content">
 										<div class="inner">
@@ -128,14 +143,6 @@ included ALL of the projects or games I'd worked on.*
 									<a href="#" id="image-link-3" class="image">
 										<img id="loop-image-3" src="" alt="" data-position="center" />
 									</a>
-									
-									<script type="module">									
-										images = ["1.webp"];
-										folder_name = 'fnaf';
-									
-										loop(folder_name, images, "loop-image-3", "image-link-3", 3000);
-									</script>
-																	
 
 									<div class="content">
 										<div class="inner">
