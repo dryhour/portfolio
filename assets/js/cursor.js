@@ -20,13 +20,12 @@ const colors = [
     '#050000',
     '#000000'
 ];
-
-
+const reversedColors = colors.length - 1 - (i % colors.length);
 
 circles.forEach(function(circle, i){
     circle.x = 0;
     circle.y = 0;
-    circle.style.backgroundColor = colors[i % colors.length];
+    circle.style.backgroundColor = reversedColors[i % colors.length];
 });
 
 window.addEventListener("mousemove", function(e){

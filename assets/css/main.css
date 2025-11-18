@@ -3410,7 +3410,8 @@ input, select, textarea {
 		-webkit-align-items: center;
 		-ms-align-items: center;
 		align-items: center;
-		background-image: url("../../images/banner.jpg");
+		background-image: none;
+		background: transparent;
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
@@ -3420,7 +3421,6 @@ input, select, textarea {
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
-		backface-visibility: hidden;
 		border-bottom: 0 !important;
 		cursor: default;
 		height: 60vh;
