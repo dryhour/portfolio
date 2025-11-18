@@ -7,8 +7,20 @@ const colors = [
     '#12587d',
     '#0f7d96',
     '#0aacb0',
-    '#04ccb1'
+    '#04ccb1',
+    '#00e6c0',
+    '#00ffcc',
+    '#1affd5',
+    '#33ffdd',
+    '#4dffe6',
+    '#66ffee',
+    '#80fff5',
+    '#99ffff',
+    '#b3ffff',
+    '#ccffff',
+    '#e6ffff'
 ];
+
 
 circles.forEach(function(circle, i){
     circle.x = 0;
