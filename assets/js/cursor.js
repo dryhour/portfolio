@@ -2,24 +2,25 @@ const coords = { x: 0, y: 0};
 const circles = document.querySelectorAll(".circle");
 
 const colors = [
-    '#142850',
-    '#143c66',
-    '#12587d',
-    '#0f7d96',
-    '#0aacb0',
-    '#04ccb1',
-    '#00e6c0',
-    '#00ffcc',
-    '#1affd5',
-    '#33ffdd',
-    '#4dffe6',
-    '#66ffee',
-    '#80fff5',
-    '#99ffff',
-    '#b3ffff',
-    '#ccffff',
-    '#e6ffff'
+    '#4260f5',
+    '#3e59e2',
+    '#3a52cf',
+    '#364abc',
+    '#3243a9',
+    '#2e3b96',
+    '#2a3483',
+    '#262d70',
+    '#22265d',
+    '#1e1f4a',
+    '#1a1737',
+    '#161024',
+    '#120811',
+    '#0e0000',
+    '#0a0000',
+    '#050000',
+    '#000000'
 ];
+
 
 
 circles.forEach(function(circle, i){
