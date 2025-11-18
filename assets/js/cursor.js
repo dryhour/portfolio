@@ -11,8 +11,8 @@ const colors = [
 ];
 
 circles.forEach(function(circle){
-    circle.x = e.clientX;
-    circle.y = e.clientY;
+    circle.x = 0;
+    circle.y = 0;
     circle.style.BackgroundColor = colors[index % colors.length];
 });
 
