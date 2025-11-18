@@ -1,12 +1,19 @@
 const coords = { x: 0, y: 0};
 const circles = document.querySelectorAll(".circle");
 
-// const colors = {"#142850", "#143c66", "#12587d", "#0f7d96", "#0aacb0", "#04ccb1"};
+const colors = [
+    '#142850',
+    '#143c66',
+    '#12587d',
+    '#0f7d96',
+    '#0aacb0',
+    '#04ccb1'
+];
 
 circles.forEach(function(circle){
     circle.x = e.clientX;
     circle.y = e.clientY;
-    // circle.style.BackgroundColor = colors[index % colors.length];
+    circle.style.BackgroundColor = colors[index % colors.length];
 });
 
 window.addEventListener("mousemove", function(e){
