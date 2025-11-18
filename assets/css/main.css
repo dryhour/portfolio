@@ -99,7 +99,16 @@ input, select, textarea {
 	}
 
 	body {
-		background: #0e192e;
+		background: #000000;
+	}
+	.circle {
+		height: 24px;
+		width: 24px;
+		border-radius: 24px;
+		background-color: black;
+		position: absolute;
+		top: 0;
+		left: 0;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
