@@ -142,7 +142,6 @@ input, select, textarea {
 		background-color: #37a6cb;
 		display: flex;
 		overflow-x: auto;
-		gap: 1em;
 	}
 	.carousel::-webkit-scrollbar {
 		display: none;
@@ -151,9 +150,7 @@ input, select, textarea {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		gap: -1.5em;
-		animation: spin 10s infinite linear;
-		padding-right: 1em;
+		animation: spin 10s infinite linear forwards;
 	}
 	.card {
 		flex: 0 0 10em;
@@ -165,7 +162,11 @@ input, select, textarea {
 		align-items: center;      
 		justify-content: center; 
 		text-align: center;
-		color: white;             
+		color: white;        
+		margin-right: 1em;     
+	}
+	.group .card:last-child {
+		margin-right: 0;
 	}
 	.card p {
 		margin: 0;        
