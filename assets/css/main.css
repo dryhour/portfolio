@@ -139,18 +139,18 @@ input, select, textarea {
 		border: 2px solid #2e3450;
 		border-radius: 10%;
 		display: flex;
-		flex-direction: column;   /* stack image above text */
-		align-items: center;      /* center horizontally */
-		justify-content: flex-start; /* align to top */
+		flex-direction: column;   
+		align-items: center;      
+		justify-content: flex-start; 
 		text-align: center;
-		color: white;             /* text color */
+		color: white;             
 	}
 	
 	.card .image img {
-		max-width: 60%;    /* make image smaller */
-		max-height: 50%;   /* keep it within upper part of card */
+		max-width: 70%;    
+		max-height: 70%;   
 		object-fit: contain;
-		margin-bottom: 0.3em;  /* spacing between image and text */
+		margin-bottom: 0.3em;  
 	}
 	
 	@keyframes spin {
