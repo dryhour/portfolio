@@ -105,17 +105,18 @@ input, select, textarea {
 	/* ADDED CSS */
 
 	.circle {
+		position: fixed;
+		top: 0;
+		left: 0;
 		height: 60px;
 		width: 60px;
 		border-radius: 50%;
 		border: 2px solid white;
-		position: absolute;
-		top: 0;
-		left: 0;
-		pointer-events: none;
-		background-color: transparent;
+		background-color: rgba(0,0,0,0.1);
 		backdrop-filter: invert(1);
+		pointer-events: none;
 		z-index: 9999;
+		transform: translate(-50%, -50%);
 	}
 	
 	.carousel {
