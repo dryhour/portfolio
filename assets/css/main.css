@@ -154,7 +154,9 @@ input, select, textarea {
 	}
 	.group.paused {
 		animation-play-state: paused;
-	}	  
+		-webkit-animation-play-state: paused;
+	}
+	  
 	.card {
 		flex: 0 0 10em;
 		height: 10em;

@@ -22,45 +22,49 @@ window.addEventListener("mousemove", e => {
 });
 
 document.querySelectorAll('.card').forEach(card => {
-    card.addEventListener('click', () => {
-  
-        if (selectedCard === card) {
-            selectedCard = null;
-            group.classList.remove('paused');
-            return;
-        }
-  
-        selectedCard = card;
-  
+    card.addEventListener('mouseenter', () => {
         group.classList.add('paused');
-  
+        hoveringCard = true;
+
         const rect = card.getBoundingClientRect();
+        cardTarget.x = rect.left + rect.width / 2;
+        cardTarget.y = rect.top + rect.height / 2;
+        cardTarget.width = rect.width;
+        cardTarget.height = rect.height;
+
         const carouselRect = carousel.getBoundingClientRect();
-        
-        const offset = (rect.left + rect.width/2) - (carouselRect.left + carouselRect.width/2);
-  
+        const offset = (rect.left + rect.width / 2) - (carouselRect.left + carouselRect.width / 2);
+
         carousel.scrollBy({
             left: offset,
             behavior: 'smooth'
         });
     });
-});
 
-document.querySelectorAll(".card, button").forEach(el => {
-    el.addEventListener("mouseenter", () => {
-        const rect = el.getBoundingClientRect();
-        hoveringCard = true;
-
-        cardTarget.x = rect.left + rect.width / 2;
-        cardTarget.y = rect.top + rect.height / 2;
-        cardTarget.width = rect.width;
-        cardTarget.height = rect.height;
-    });
-
-    el.addEventListener("mouseleave", () => {
+    card.addEventListener('mouseleave', () => {
+        group.classList.remove('paused');
         hoveringCard = false;
     });
 });
+
+
+document.querySelectorAll('.card, button').forEach(el => {
+    if (!el.classList.contains('card')) {
+        el.addEventListener('mouseenter', () => {
+            const rect = el.getBoundingClientRect();
+            hoveringCard = true;
+            cardTarget.x = rect.left + rect.width / 2;
+            cardTarget.y = rect.top + rect.height / 2;
+            cardTarget.width = rect.width;
+            cardTarget.height = rect.height;
+        });
+
+        el.addEventListener('mouseleave', () => {
+            hoveringCard = false;
+        });
+    }
+});
+
 
 carousel.addEventListener('wheel', e => {
     e.preventDefault();
