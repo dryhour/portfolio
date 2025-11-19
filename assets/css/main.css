@@ -139,6 +139,7 @@ input, select, textarea {
 	.carousel {
 		margin: 150px;
 		width: 90%;
+		background-color: #37a6cb;
 		display: flex;
 		overflow-x: auto;
 		gap: 1em;
