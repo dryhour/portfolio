@@ -15,9 +15,6 @@ window.addEventListener("mousemove", e => {
 });
 
 function animateCircles() {
-    let x = coords.x;
-    let y = coords.y;
-
     const now = Date.now();
     const dt = Math.max(1, now - lastMouse.time);
     const dx = coords.x - lastMouse.x;
@@ -27,19 +24,21 @@ function animateCircles() {
     const targetScale = Math.max(0.5, 1 - speed / 25);
     currentScale += (targetScale - currentScale) * 0.15;
 
+    let x = coords.x;
+    let y = coords.y;
+
     circles.forEach((circle, index) => {
-        circle.style.left = x + "px";
-        circle.style.top = y + "px";
+        circle.style.left = circle.x + "px";
+        circle.style.top = circle.y + "px";
         
         const sizeScale = (1 - index * 0.03) * currentScale;
         circle.style.transform = `translate(-50%, -50%) scale(${sizeScale})`;
         
-        const nextCircle = circles[index + 1] || circles[0];
-        x += (nextCircle.x - x) * 0.25;
-        y += (nextCircle.y - y) * 0.25;
+        circle.x += (x - circle.x) * 0.25;
+        circle.y += (y - circle.y) * 0.25;
         
-        circle.x = x;
-        circle.y = y;
+        x = circle.x;
+        y = circle.y;
     });
 
     const first = circles[0];
