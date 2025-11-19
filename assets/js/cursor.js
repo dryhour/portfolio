@@ -1,9 +1,12 @@
 const coords = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
 const wrapper = document.querySelector(".cursor-wrapper");
 const circles = document.querySelectorAll(".circle");
+const innerCircle = document.querySelector(".inner-circle");
+
 let lastMouse = { x: coords.x, y: coords.y, time: Date.now() };
 let currentScale = 1;
 
+// Initialize circles positions
 circles.forEach(c => { 
     c.x = coords.x; 
     c.y = coords.y; 
@@ -19,9 +22,9 @@ function animateCircles() {
     const dt = Math.max(1, now - lastMouse.time);
     const dx = coords.x - lastMouse.x;
     const dy = coords.y - lastMouse.y;
-    const speed = Math.hypot(dx, dy) / dt * 30;
+    const speed = Math.hypot(dx, dy) / dt * 16;
 
-    const targetScale = Math.max(0.5, 1 - speed / 16);
+    const targetScale = Math.max(0.5, 1 - speed / 25);
     currentScale += (targetScale - currentScale) * 0.15;
 
     let x = coords.x;
@@ -34,7 +37,7 @@ function animateCircles() {
         circle.y += (y - circle.y) * 0.2;
         
         const sizeScale = (1 - index * 0.05) * currentScale;
-        const radius = 0 * sizeScale;
+        const radius = 30 * sizeScale;
         
         circle.style.left = (circle.x - coords.x) + "px";
         circle.style.top = (circle.y - coords.y) + "px";
@@ -58,7 +61,14 @@ function animateCircles() {
     wrapper.style.height = wrapperHeight + "px";
     wrapper.style.left = wrapperX + "px";
     wrapper.style.top = wrapperY + "px";
-    wrapper.style.transform = `translate(-50%, -50%)`;
+
+    // Inner circle: 1/3 of wrapper size, stays centered
+    const innerSize = Math.min(wrapperWidth, wrapperHeight) / 3;
+    innerCircle.style.width = innerSize + "px";
+    innerCircle.style.height = innerSize + "px";
+    innerCircle.style.left = "50%";
+    innerCircle.style.top = "50%";
+    innerCircle.style.transform = "translate(-50%, -50%)";
 
     lastMouse.x = coords.x;
     lastMouse.y = coords.y;
