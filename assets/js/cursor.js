@@ -1,12 +1,12 @@
-const coords = { x: 0, y: 0 };
+const coords = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
 const wrapper = document.querySelector(".cursor-wrapper");
 const circles = document.querySelectorAll(".circle");
-let lastMouse = { x: 0, y: 0, time: Date.now() };
+let lastMouse = { x: coords.x, y: coords.y, time: Date.now() };
 let currentScale = 1;
 
 circles.forEach(c => { 
-    c.x = 0; 
-    c.y = 0; 
+    c.x = coords.x; 
+    c.y = coords.y; 
 });
 
 window.addEventListener("mousemove", e => {
@@ -24,19 +24,19 @@ function animateCircles() {
     const dy = coords.y - lastMouse.y;
     const speed = Math.hypot(dx, dy) / dt * 16;
 
-    const targetScale = Math.max(0.4, 1 - speed / 30);
+    const targetScale = Math.max(0.5, 1 - speed / 25);
     currentScale += (targetScale - currentScale) * 0.15;
 
     circles.forEach((circle, index) => {
         circle.style.left = x + "px";
         circle.style.top = y + "px";
         
-        const sizeScale = (1 - index * 0.05) * currentScale;
+        const sizeScale = (1 - index * 0.03) * currentScale;
         circle.style.transform = `translate(-50%, -50%) scale(${sizeScale})`;
         
         const nextCircle = circles[index + 1] || circles[0];
-        x += (nextCircle.x - x) * 0.3;
-        y += (nextCircle.y - y) * 0.3;
+        x += (nextCircle.x - x) * 0.25;
+        y += (nextCircle.y - y) * 0.25;
         
         circle.x = x;
         circle.y = y;
