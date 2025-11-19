@@ -2,7 +2,6 @@ const coords = { x: 0, y: 0 };
 const wrapper = document.querySelector(".cursor-wrapper");
 const circles = document.querySelectorAll(".circle");
 let lastMouse = { x: 0, y: 0 };
-let lastSpeed = 0;
 
 circles.forEach(c => { c.x = 0; c.y = 0; });
 
@@ -42,15 +41,16 @@ function animateCircles() {
     const dy = coords.y - lastMouse.y;
     const speed = Math.hypot(dx, dy);
 
-    let squash = Math.min(1, 1 - speed / 500);
-    squash = Math.max(0.5, squash); // limit how much it squashes
-    squash += (1 - squash) * 0.2;  // bounce effect smoothing
+    const angle = Math.atan2(dy, dx);
+    const exaggeration = Math.min(2, speed / 20 + 1); // exaggerate stretch
 
-    wrapper.style.transform = `translate(-50%, -50%) scaleX(${1}) scaleY(${squash})`;
+    const scaleX = Math.cos(angle) * exaggeration * 0.5 + 0.5; 
+    const scaleY = Math.sin(angle) * exaggeration * 0.5 + 0.5; 
+
+    wrapper.style.transform = `translate(-50%, -50%) scaleX(${scaleX}) scaleY(${scaleY})`;
 
     lastMouse.x = coords.x;
     lastMouse.y = coords.y;
-    lastSpeed = speed;
 
     requestAnimationFrame(animateCircles);
 }
