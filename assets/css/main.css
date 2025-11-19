@@ -102,6 +102,8 @@ input, select, textarea {
 		background: #000000;
 	}
 
+	/* ADDED CSS */
+
 	.circle {
 		height: 24px;
 		width: 24px;
@@ -110,6 +112,39 @@ input, select, textarea {
 		position: absolute;
 		top: 0;
 		left: 0;
+	}
+	.carousel {
+		margin: 100px;
+		width: 90%;
+		display: flex;
+		border: #201d33;
+		border-radius: 10%;
+		overflow-x: auto;
+		gap: 1em;
+	}
+	.carousel::-webkit-scrollbar {
+		display: none;
+	}
+	.group{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1em;
+		animation: spin 10s infinite linear;
+		padding-right: 1em;
+	}
+	.card {
+		flex: 0 0 5em;
+		height: 5em;
+		padding: 1em;
+		background: black;
+		border: #2e3450;
+		border-radius: 10%;
+		align-content: center;
+	}
+	@keyframes spin {
+		from {translate: 0;}
+		to {translate: -100%;}
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -2465,6 +2500,7 @@ input, select, textarea {
 
 			table tbody tr:nth-child(2n + 1) {
 				background-color: rgba(212, 212, 255, 0.035);
+				background: transparent;
 			}
 
 		table td {
@@ -2481,10 +2517,12 @@ input, select, textarea {
 
 		table thead {
 			border-bottom: solid 2px rgba(212, 212, 255, 0.1);
+			background: transparent;
 		}
 
 		table tfoot {
 			border-top: solid 2px rgba(212, 212, 255, 0.1);
+			background: transparent;
 		}
 
 		table.alt {

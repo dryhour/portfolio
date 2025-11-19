@@ -21,7 +21,6 @@ const colors = [
     '#4260f5'
 ];
 
-
 circles.forEach(function(circle, i){
     circle.x = 0;
     circle.y = 0;
