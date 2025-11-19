@@ -7,7 +7,6 @@ const group = document.querySelector(".group");
 
 let lastMouse = { x: coords.x, y: coords.y, time: Date.now() };
 let currentScale = 1;
-let selectedCard = null;
 let hoveringCard = false;
 let cardTarget = { x: 0, y: 0, width: 0, height: 0 };
 
@@ -21,34 +20,7 @@ window.addEventListener("mousemove", e => {
     coords.y = e.clientY;
 });
 
-document.querySelectorAll('.card').forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        group.classList.add('paused');
-        hoveringCard = true;
-
-        const rect = card.getBoundingClientRect();
-        cardTarget.x = rect.left + rect.width / 2;
-        cardTarget.y = rect.top + rect.height / 2;
-        cardTarget.width = rect.width;
-        cardTarget.height = rect.height;
-
-        const carouselRect = carousel.getBoundingClientRect();
-        const offset = (rect.left + rect.width / 2) - (carouselRect.left + carouselRect.width / 2);
-
-        carousel.scrollBy({
-            left: offset,
-            behavior: 'smooth'
-        });
-    });
-
-    card.addEventListener('mouseleave', () => {
-        group.classList.remove('paused');
-        hoveringCard = false;
-    });
-});
-
-
-document.querySelectorAll('.card, button').forEach(el => {
+document.querySelectorAll('button, icon').forEach(el => {
     if (!el.classList.contains('card')) {
         el.addEventListener('mouseenter', () => {
             const rect = el.getBoundingClientRect();
@@ -65,11 +37,9 @@ document.querySelectorAll('.card, button').forEach(el => {
     }
 });
 
-
 carousel.addEventListener('wheel', e => {
     e.preventDefault();
 }, { passive: false });
-
 
 function animateCircles() {
     const now = Date.now();
