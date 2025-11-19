@@ -149,8 +149,8 @@ input, select, textarea {
 	.card .image img {
 		max-width: 70%;    
 		max-height: 70%;   
-		object-fit: contain;
-		margin-bottom: 0.3em;  
+		object-fit: cover;
+		margin-bottom: 0.1em;  
 	}
 	
 	@keyframes spin {
