@@ -105,15 +105,15 @@ input, select, textarea {
 	/* ADDED CSS */
 
 	.circle {
-		height: 24px;
-		width: 24px;
+		height: 60px;
+		width: 60px;
 		border-radius: 50%;
-		background-color: rgba(0, 0, 0, 0.2);
 		border: 2px solid white;
 		position: absolute;
 		top: 0;
 		left: 0;
 		pointer-events: none;
+		background-color: transparent;
 		backdrop-filter: invert(1);
 	}
 	

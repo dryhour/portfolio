@@ -16,8 +16,8 @@ function animateCircles(){
     let y = coords.y;
 
     circles.forEach((circle, index) => {
-        circle.style.left = x - 12 + "px";
-        circle.style.top = y - 12 + "px";
+        circle.style.left = x - circle.offsetWidth / 2 + "px";
+        circle.style.top = y - circle.offsetHeight / 2 + "px";
         circle.style.transform = `scale(${1 - index * 0.01})`;
         circle.x = x;
         circle.y = y;
