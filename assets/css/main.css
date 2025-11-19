@@ -198,6 +198,7 @@ input, select, textarea {
 	}
 
 	.resume-button {
+		height: 32px;
 		background-color: #ffffff;
 		color: #242943;
 		text-align: center;
