@@ -117,8 +117,6 @@ input, select, textarea {
 		margin: 100px;
 		width: 90%;
 		display: flex;
-		border: #201d33;
-		border-radius: 10%;
 		overflow-x: auto;
 		gap: 1em;
 	}
@@ -136,12 +134,25 @@ input, select, textarea {
 	.card {
 		flex: 0 0 5em;
 		height: 5em;
-		padding: 1em;
+		padding: 0.5em;
 		background: black;
-		border: #2e3450;
+		border: 2px solid #2e3450;
 		border-radius: 10%;
-		align-content: center;
+		display: flex;
+		flex-direction: column;   /* stack image above text */
+		align-items: center;      /* center horizontally */
+		justify-content: flex-start; /* align to top */
+		text-align: center;
+		color: white;             /* text color */
 	}
+	
+	.card .image img {
+		max-width: 60%;    /* make image smaller */
+		max-height: 50%;   /* keep it within upper part of card */
+		object-fit: contain;
+		margin-bottom: 0.3em;  /* spacing between image and text */
+	}
+	
 	@keyframes spin {
 		from {translate: 0;}
 		to {translate: -100%;}
