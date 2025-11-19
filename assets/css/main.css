@@ -201,19 +201,30 @@ input, select, textarea {
 		height: 32px;
 		background-color: #ffffff;
 		color: #242943;
-		text-align: center;
-		display: inline-flex;
-		align-items: center	;
-		gap: 8px;
+		display: inline-flex;       /* keeps image + text in a row */
+		align-items: center;        /* vertical centering */
+		gap: 8px;                   /* spacing between icon and text */
 		padding: 10px 20px;
 		text-decoration: none;
 		border-radius: 10px;
 		font-weight: bold;
+		text-align: left;           /* ensures text inside aligns left */
+		width: auto;                /* width scales to content */
 	}
 	
 	.resume-button:hover {
 		background-color: #005fcc;
 	}
+	
+	.resume-button .icon {
+		display: inline-block;
+		width: 2em;
+		height: 2em;
+		line-height: 2em;
+		text-align: center;
+		color: #242943;
+	}
+	
 	
 	
 	
