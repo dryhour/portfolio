@@ -150,7 +150,7 @@ input, select, textarea {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		gap: 0.5em;
+		gap: 0em;
 		animation: spin 10s infinite linear;
 		padding-right: 1em;
 	}
