@@ -3558,7 +3558,6 @@ input, select, textarea {
 		min-height: 22em;
 		position: relative;
 		top: -3.25em;
-		opacity: 0%;
 	}
 
 		#banner:after {
@@ -3571,7 +3570,6 @@ input, select, textarea {
 			-ms-transition-delay: 0.75s;
 			transition-delay: 0.75s;
 			pointer-events: none;
-			background-color: #000000;
 			content: '';
 			display: block;
 			height: 100%;
