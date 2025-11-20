@@ -3558,6 +3558,7 @@ input, select, textarea {
 		min-height: 22em;
 		position: relative;
 		top: -3.25em;
+		opacity: 0%;
 	}
 
 		#banner:after {
