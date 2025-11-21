@@ -261,6 +261,11 @@ input, select, textarea {
 		padding: 0;
 		margin: 0;
 		list-style: none;
+		gap: 8px;
+	}
+
+	.icons li {
+		flex: 1;
 	}
 	
 	.icons li a {
@@ -276,6 +281,8 @@ input, select, textarea {
 		color: white;
 		font-weight: 700;
 		font-size: 18px;
+		width: 100%; 
+		box-sizing: border-box;
 	}
 	
 	.icons li a img {
