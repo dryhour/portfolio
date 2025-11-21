@@ -1946,7 +1946,7 @@ input, select, textarea {
 			}
 
 		header.major > p {
-			font-size: 15;
+			font-size: 0.6em;
 			font-weight: 300;
 			margin-bottom: 0;
 		}
