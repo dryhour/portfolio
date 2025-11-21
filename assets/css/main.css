@@ -1914,6 +1914,11 @@ input, select, textarea {
 		width: -ms-max-content;
 		width: max-content;
 		margin-bottom: 2em;
+		font-family: 'DM Mono', monospace;
+		font-size: 48;
+    	font-weight: 500;
+		background-color: #ffffff; 
+		background-image: linear-gradient(to bottom, #e5f1fa, #ffffff, #e5f1fa);
 	}
 
 		header.major > :first-child {
