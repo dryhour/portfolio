@@ -196,34 +196,6 @@ input, select, textarea {
 		from {opacity: 0; scale: 0.5;}
 		to {opacity: 1; scale: 1;}
 	}
-
-	.resume-button {
-		height: 32px;
-		background-color: #ffffff;
-		color: #242943;
-		display: inline-flex;       /* keeps image + text in a row */
-		align-items: center;        /* vertical centering */
-		gap: 8px;                   /* spacing between icon and text */
-		padding: 10px 20px;
-		text-decoration: none;
-		border-radius: 10px;
-		font-weight: bold;
-		text-align: left;           /* ensures text inside aligns left */
-		width: auto;                /* width scales to content */
-	}
-	
-	.resume-button:hover {
-		background-color: #005fcc;
-	}
-	
-	.resume-button .icon {
-		display: inline-block;
-		width: 2em;
-		height: 2em;
-		line-height: 2em;
-		text-align: center;
-		color: #242943;
-	}
 	video {
 		position: absolute;
 		top: 0;
@@ -235,14 +207,72 @@ input, select, textarea {
 	}
 	
 	.information {
+		position: fixed;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		width: 15vw;
+		height: 30vh;
 		background-color: #00000070;
 		border: 2px solid #3a3939;
-		border-radius: 3px;
+		border-radius: 8px;
+		display: grid;
+		grid-template-rows: 2fr 1fr;
+		align-items: center;
+		justify-items: center;
 		padding: 10px;
+		box-sizing: border-box;
 	}
-	.information h2 {
+	
+	.resume-button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		width: 100%;
+		height: 100%;
+		background-color: #ffffff;
+		color: #242943;
+		font-weight: bold;
+		border-radius: 10px;
+		text-decoration: none;
+		text-align: left;
+		padding: 10px 20px;
+		transition: background-color 0.3s;
+	}
+	
+	.resume-button:hover {
+		background-color: #005fcc;
+	}
+	
+	.resume-button .icon {
+		width: 2em;
+		height: 2em;
+		display: inline-block;
+		line-height: 2em;
+		text-align: center;
+		color: #242943;
+	}
+	
+	.icons {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		list-style: none;
 		margin: 0;
+		padding: 0;
 	}
+	
+	.icons li a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+	}
+	
 	
 	
 	
@@ -1967,6 +1997,7 @@ input, select, textarea {
 		header.major > p {
 			font-size: 16px;
 			font-weight: 300;
+			color: white;
 			margin-bottom: 0;
 		}
 
