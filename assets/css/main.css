@@ -3577,6 +3577,8 @@ input, select, textarea {
 		min-height: 22em;
 		position: relative;
 		top: -3.25em;
+		width: 50vw;
+		font-size: 48px;
 	}
 
 		#banner:after {
