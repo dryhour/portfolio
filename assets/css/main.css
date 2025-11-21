@@ -1922,6 +1922,10 @@ input, select, textarea {
 		color: transparent;
 	}
 	
+	header > h1 {
+		font-size: 48px;
+	}
+	
 	.name-highlight {
 		background-image: linear-gradient(to top right, #115c96, #0091ff, #97c8ee);
 		-webkit-background-clip: text;
@@ -3577,8 +3581,7 @@ input, select, textarea {
 		min-height: 22em;
 		position: relative;
 		top: -3.25em;
-		width: 50vw;
-		font-size: 48px;
+		width: 75vw;
 	}
 
 		#banner:after {
