@@ -1946,9 +1946,8 @@ input, select, textarea {
 			}
 
 		header.major > p {
-			font-size: 35;
-			font-weight: 600;
-			letter-spacing: 0.25em;
+			font-size: 15;
+			font-weight: 300;
 			margin-bottom: 0;
 		}
 
