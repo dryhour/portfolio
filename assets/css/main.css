@@ -1915,23 +1915,25 @@ input, select, textarea {
 		text-align: left;
 		font-family: 'DM Mono', monospace;
 		font-weight: 500;
-		background-image: linear-gradient(to top right, #82919c, #9fa1ab, #73808a);
+		background-image: linear-gradient(to top right, #82919c, #777981, #565e65);
 		-webkit-background-clip: text;
 		background-clip: text;
 		color: transparent;
 	}
 	
 	header > h1 {
-		font-size: 30px;
+		font-size: 25px;
+		line-height: 0.75;
 	}
 	
 	.name-highlight {
-		background-image: linear-gradient(to top right, #115c96, #0091ff, #97c8ee);
+		background-image: linear-gradient(to top right, #0291ff, #ff1515);
 		-webkit-background-clip: text;
 		background-clip: text;
 		color: transparent;
-		font-size: 70px;
+		font-size: 140px;
 		font-weight: 700;
+		text-transform: uppercase;
 	}
 	
 	header.major > :first-child:after {
