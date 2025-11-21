@@ -212,66 +212,72 @@ input, select, textarea {
 		left: 0;
 		transform: translateY(-50%);
 		width: 15vw;
-		height: 30vh;
-		background-color: #00000070;
-		border: 2px solid #3a3939;
-		border-radius: 8px;
-		display: grid;
-		grid-template-rows: 2fr 1fr;
-		align-items: center;
-		justify-items: center;
+		height: 40vh;
+	
+		background-color: #00ff00;  /* green like your example */
 		padding: 10px;
 		box-sizing: border-box;
+	
+		display: grid;
+		grid-template-rows: 2fr 1fr;
+		gap: 10px;
+	
+		border-radius: 8px;
 	}
 	
+	/* BIG TOP BOX (Resume Button) */
 	.resume-button {
+		background: #c8964f;     /* brown like your large box */
+		border-radius: 10px;
+		color: #242943;
+	
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		gap: 8px;
+	
 		width: 100%;
 		height: 100%;
-		background-color: #ffffff;
-		color: #242943;
-		font-weight: bold;
-		border-radius: 10px;
 		text-decoration: none;
-		text-align: left;
-		padding: 10px 20px;
-		transition: background-color 0.3s;
+		font-weight: bold;
 	}
 	
 	.resume-button:hover {
-		background-color: #005fcc;
+		background: #d9a96c;
 	}
 	
+	/* PDF icon */
 	.resume-button .icon {
 		width: 2em;
 		height: 2em;
-		display: inline-block;
-		line-height: 2em;
-		text-align: center;
-		color: #242943;
 	}
 	
+	/* BOTTOM ROW — contains the TWO SMALL BOXES */
 	.icons {
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
-		width: 100%;
-		height: 100%;
 		list-style: none;
 		margin: 0;
 		padding: 0;
+	
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 10px;
+	
+		height: 100%;
 	}
 	
+	/* Each small box */
 	.icons li a {
+		background: #c96f54;   /* reddish-brown small boxes */
+		border-radius: 10px;
+	
+		width: 100%;
+		height: 100%;
+	
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 40px;
-		height: 40px;
 	}
+	
 	
 	
 	
