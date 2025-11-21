@@ -388,10 +388,10 @@ input, select, textarea {
 	}
 
 	code {
-		background: rgb(255, 255, 255);
+		background: rgb(227, 228, 228);
 		font-family: "Courier New", monospace;
-		border-radius: 5%;
-		border: #edeff1;
+		border-radius: 2px;
+		border: 2px #ccd1d6;
 		color: #686c72;
 		font-size: 0.9em;
 		margin: 0 0.25em;
