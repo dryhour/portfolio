@@ -1914,16 +1914,15 @@ input, select, textarea {
 		margin: 0;
 		text-align: left;
 		font-family: 'DM Mono', monospace;
-		font-size: 48px;
 		font-weight: 500;
-		background-image: linear-gradient(to top right, #82919c, #ffffff, #73808a);
+		background-image: linear-gradient(to top right, #82919c, #9fa1ab, #73808a);
 		-webkit-background-clip: text;
 		background-clip: text;
 		color: transparent;
 	}
 	
 	header > h1 {
-		font-size: 48px;
+		font-size: 30px;
 	}
 	
 	.name-highlight {
@@ -1931,7 +1930,7 @@ input, select, textarea {
 		-webkit-background-clip: text;
 		background-clip: text;
 		color: transparent;
-		font-size: 50px;
+		font-size: 70px;
 		font-weight: 700;
 	}
 	
