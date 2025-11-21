@@ -209,7 +209,6 @@ input, select, textarea {
 	.information {
 		top: 50%;
 		left: 0;
-		transform: translateY(-50%);
 		width: 15vw;
 		height: 10vh;
 		background-color: #00000070;
