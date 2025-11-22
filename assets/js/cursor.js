@@ -99,9 +99,9 @@ function animateCircles() {
     
         const lerp = (a, b, t) => a + (b - a) * t;
     
-        const scale = 1.2
-        const newWidth = lerp(currentRect.width, cardTarget.width * scale, 0.15);
-        const newHeight = lerp(currentRect.height, cardTarget.height * scale, 0.15);
+        const padding = 20;
+        const newWidth = lerp(currentRect.width, cardTarget.width + padding, 0.15);
+        const newHeight = lerp(currentRect.height, cardTarget.height + padding, 0.15);
         const newX = lerp(currentRect.left + currentRect.width / 2, cardTarget.x, 0.15);
         const newY = lerp(currentRect.top + currentRect.height / 2, cardTarget.y, 0.15);
     

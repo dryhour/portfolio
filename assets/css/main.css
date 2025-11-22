@@ -111,7 +111,7 @@ input, select, textarea {
 		pointer-events: none;
 		z-index: 9999;
 		border: 1px solid white;
-		border-radius: 0%;
+		border-radius: 10px;
 		backdrop-filter: invert(1);
 		transform: translate(-50%, -50%) scale(1);
 	}
@@ -121,7 +121,6 @@ input, select, textarea {
 		top: 0;
 		left: 0;
 		height: 10px;
-		border-radius: 10%;
 		width: 10px;
 		border-radius: 0%;
 		background-color: transparent;
@@ -133,7 +132,6 @@ input, select, textarea {
 		left: 0;
 		height: 10px;
 		width: 10px;
-		border-radius: 0%;
 		background-color: transparent;
 		z-index: 10000;
 	}
