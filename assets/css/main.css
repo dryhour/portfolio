@@ -277,6 +277,7 @@ input, select, textarea {
 
 	.icons li:first-child a {
 		margin-left: 0;
+		margin-right: 8;
 	}
 	
 	.icons li:last-child a {
@@ -3637,7 +3638,7 @@ input, select, textarea {
 		min-height: 22em;
 		position: relative;
 		top: -3.25em;
-		width: 75vw;
+		width: 60vw;
 	}
 
 		#banner:after {

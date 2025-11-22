@@ -4,6 +4,7 @@ const circles = document.querySelectorAll(".circle");
 const innerCircle = document.querySelector(".inner-circle");
 const carousel = document.querySelector(".carousel");
 const group = document.querySelector(".group");
+const video = document.getElementById('interactive-video');
 
 let lastMouse = { x: coords.x, y: coords.y, time: Date.now() };
 let currentScale = 1;
@@ -18,7 +19,16 @@ circles.forEach(c => {
 window.addEventListener("mousemove", e => {
     coords.x = e.clientX;
     coords.y = e.clientY;
+
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+
+    const mouseX = (e.clientX / windowWidth - 0.5) * 20;
+    const mouseY = (e.clientY / windowHeight - 0.5) * 20;
+
+    video.style.transform = `translate(calc(-50% + ${mouseX}px), calc(-50% + ${mouseY}px))`;
 });
+
 
 document.querySelectorAll('button, icons').forEach(el => {
     if (!el.classList.contains('card')) {
