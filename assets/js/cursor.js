@@ -19,7 +19,7 @@ circles.forEach(c => {
 window.addEventListener("mousemove", e => {
     coords.x = e.clientX;
     coords.y = e.clientY;
-    
+
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
 
@@ -30,21 +30,19 @@ window.addEventListener("mousemove", e => {
 });
 
 
-document.querySelectorAll('button, icons').forEach(el => {
-    if (!el.classList.contains('card')) {
-        el.addEventListener('mouseenter', () => {
-            const rect = el.getBoundingClientRect();
-            hoveringCard = true;
-            cardTarget.x = rect.left + rect.width / 2;
-            cardTarget.y = rect.top + rect.height / 2;
-            cardTarget.width = rect.width;
-            cardTarget.height = rect.height;
-        });
+document.querySelectorAll('button, .resume-button, .icons a').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        const rect = el.getBoundingClientRect();
+        hoveringCard = true;
+        cardTarget.x = rect.left + rect.width / 2;
+        cardTarget.y = rect.top + rect.height / 2;
+        cardTarget.width = rect.width;
+        cardTarget.height = rect.height;
+    });
 
-        el.addEventListener('mouseleave', () => {
-            hoveringCard = false;
-        });
-    }
+    el.addEventListener('mouseleave', () => {
+        hoveringCard = false;
+    });
 });
 
 carousel.addEventListener('wheel', e => {
@@ -111,6 +109,7 @@ function animateCircles() {
         wrapper.style.left = newX + "px";
         wrapper.style.top = newY + "px";
     }
+    
     
 
     const innerSize = Math.min(wrapperWidth, wrapperHeight) / 3;

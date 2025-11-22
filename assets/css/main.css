@@ -238,11 +238,7 @@ input, select, textarea {
 		width: 1em;
 		height: 1em;
 	}
-	
-	.resume-button:hover {
-		background-color: #005fcc;
-	}
-	
+
 	.icons {
 		display: flex;
 		align-items: center;
@@ -258,9 +254,6 @@ input, select, textarea {
 	.icon.brands.alt.fa-linkedin-in::before {
 		filter: invert(1);
 	}
-
-	
-
 	
 	.icons li {
 		flex: 1;
@@ -2372,14 +2365,6 @@ input, select, textarea {
 		-webkit-transition: background-color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out;
-	}
-
-	a.icon.alt:hover:before {
-		background-color: #6fc3df;
-	}
-
-	a.icon.alt:active:before {
-		background-color: #37a6cb;
 	}
 
 /* Image */
