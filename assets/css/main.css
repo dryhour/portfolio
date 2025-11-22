@@ -140,7 +140,6 @@ input, select, textarea {
 		margin: 90px auto 0 auto;
 		width: 90%;
 		display: flex;
-		padding-right: 2rem;
 		gap: 1em;
 		overflow-x: auto;
 		-webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
