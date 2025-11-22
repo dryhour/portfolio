@@ -19,14 +19,14 @@ circles.forEach(c => {
 window.addEventListener("mousemove", e => {
     coords.x = e.clientX;
     coords.y = e.clientY;
-
+    
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
 
     const mouseX = (e.clientX / windowWidth - 0.5) * 20;
     const mouseY = (e.clientY / windowHeight - 0.5) * 20;
 
-    video.style.transform = `translate(calc(-50% + ${mouseX}px), calc(-50% + ${mouseY}px))`;
+    video.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
 });
 
 
