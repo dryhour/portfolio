@@ -6,24 +6,23 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 let object;
 let mouseX = window.innerWidth / 2;
 let mouseY = window.innerHeight / 2;
-const objToRender = "black_hole";
 
 const loader = new GLTFLoader();
 loader.load(
-  `./models/${objToRender}/scene.gltf`,
+  './models/black_hole/scene.gltf',
   (gltf) => {
     object = gltf.scene;
     scene.add(object);
   },
   (xhr) => {
-    if (xhr.total) console.log((xhr.loaded / xhr.total * 100) + "% loaded");
+    if (xhr.total) console.log((xhr.loaded / xhr.total * 100) + '% loaded');
   },
   (error) => console.error(error)
 );
 
 const renderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
-document.getElementById("container3D").appendChild(renderer.domElement);
+document.getElementById('container3D').appendChild(renderer.domElement);
 
 camera.position.z = 10;
 
@@ -43,13 +42,13 @@ function animate() {
   renderer.render(scene, camera);
 }
 
-window.addEventListener("resize", () => {
+window.addEventListener('resize', () => {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
-document.addEventListener("mousemove", (e) => {
+document.addEventListener('mousemove', (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
 });
