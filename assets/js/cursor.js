@@ -87,17 +87,25 @@ function animateCircles() {
     let x = parseFloat(wrapper.style.left || 0);
     let y = parseFloat(wrapper.style.top || 0);
 
-    circles.forEach(circle => {
-        circle.x += (x - circle.x) * tween;
-        circle.y += (y - circle.y) * tween;
-
+    circles.forEach((circle, index) => {
+        // Each circle lags more based on its index
+        const circleTween = tween * (1 - index * 0.1); // first circle fastest, later circles slower
+    
+        circle.x += (x - circle.x) * circleTween;
+        circle.y += (y - circle.y) * circleTween;
+    
+        // Each circle slightly smaller
+        const scale = 1 - index * 0.05; // first circle 1, second 0.95, etc.
+    
         circle.style.left = circle.x + "px";
         circle.style.top = circle.y + "px";
-        circle.style.transform = `translate(-50%, -50%)`;
-
+        circle.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    
+        // Update reference point for next circle to trail after this one
         x = circle.x;
         y = circle.y;
     });
+    
 
     lastMouse.time = now;
     requestAnimationFrame(animateCircles);
