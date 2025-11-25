@@ -10,6 +10,7 @@ let lastMouse = { x: coords.x, y: coords.y, time: Date.now() };
 let currentScale = 1;
 let hoveringCard = false;
 let cardTarget = { x: 0, y: 0, width: 0, height: 0 };
+let trailAngle = 0;
 
 circles.forEach(c => { 
     c.x = coords.x; 
@@ -56,20 +57,15 @@ function animateCircles() {
     const dy = coords.y - lastMouse.y;
     const speed = Math.hypot(dx, dy) / dt * 16;
 
-    let wrapperAngle = 0;
-
-    if (dx !== 0 || dy !== 0) {
-        wrapperAngle = Math.atan2(dy, dx) * (180 / Math.PI);
-    }
-    
-    // wrapper.style.transform = `translate(-50%, -50%) rotate(${wrapperAngle}deg)`;
-    
-
     const targetScale = Math.max(0.5, 1 - speed / 25);
     currentScale += (targetScale - currentScale) * 0.15;
 
     let x = coords.x;
     let y = coords.y;
+
+    if (dx !== 0 || dy !== 0) {
+        trailAngle = Math.atan2(dy, dx) * (180 / Math.PI);
+    }    
 
     let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
 
@@ -80,10 +76,10 @@ function animateCircles() {
         const sizeScale = (1 - index * 0.05) * currentScale;
         const radius = 30 * sizeScale;
         
-        // circle.style.left = (circle.x - coords.x) + "px";
-        // circle.style.top = (circle.y - coords.y) + "px";
-        //  circle.style.transform = `translate(-50%, -50%) scale(${sizeScale})`;
-        
+        circle.style.left = (circle.x - coords.x) + "px";
+        circle.style.top = (circle.y - coords.y) + "px";
+        circle.style.transform = `translate(-50%, -50%) rotate(${trailAngle}deg) scale(${sizeScale})`;
+                
         minX = Math.min(minX, circle.x - radius);
         maxX = Math.max(maxX, circle.x + radius);
         minY = Math.min(minY, circle.y - radius);
@@ -103,6 +99,7 @@ function animateCircles() {
         wrapper.style.height = wrapperHeight + "px";
         wrapper.style.left = wrapperX + "px";
         wrapper.style.top = wrapperY + "px";
+        wrapper.style.borderRadius = "10px";
     } else {
         const currentRect = wrapper.getBoundingClientRect();
     
@@ -114,10 +111,11 @@ function animateCircles() {
         const newX = lerp(currentRect.left + currentRect.width / 2, cardTarget.x, 0.15);
         const newY = lerp(currentRect.top + currentRect.height / 2, cardTarget.y, 0.15);
     
-        wrapper.style.width = newWidth + "px";
-        wrapper.style.height = newHeight + "px";
-        wrapper.style.left = newX + "px";
-        wrapper.style.top = newY + "px";
+        // wrapper.style.width = newWidth + "px";
+        // wrapper.style.height = newHeight + "px";
+        // wrapper.style.left = newX + "px";
+        // wrapper.style.top = newY + "px";
+        wrapper.style.borderRadius = "100%";
     }
     
     
