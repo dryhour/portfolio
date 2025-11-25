@@ -61,8 +61,8 @@ function animateCircles() {
     const dy = coords.y - lastMouse.y;
     const speed = Math.hypot(dx, dy) / dt * 16;
 
-    const targetScale = Math.max(0.5, 1 - speed / 25);
-    currentScale += (targetScale - currentScale) * 0.15;
+    // const targetScale = Math.max(0.5, 1 - speed / 25);
+    // currentScale += (targetScale - currentScale) * 0.15;
 
     let x = coords.x;
     let y = coords.y;
@@ -82,7 +82,7 @@ function animateCircles() {
         
         circle.style.left = (circle.x - coords.x) + "px";
         circle.style.top = (circle.y - coords.y) + "px";
-        circle.style.transform = `translate(-50%, -50%) rotate(${trailAngle}deg) scale(${sizeScale})`;
+        circle.style.transform = `translate(-50%, -50%) rotate(${trailAngle}deg) scale(1)`;
                 
         minX = Math.min(minX, circle.x - radius);
         maxX = Math.max(maxX, circle.x + radius);
