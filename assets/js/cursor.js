@@ -59,25 +59,67 @@ function animateCircles() {
     const dt = Math.max(1, now - lastMouse.time);
     const dx = coords.x - lastMouse.x;
     const dy = coords.y - lastMouse.y;
+    const speed = Math.hypot(dx, dy) / dt * 16;
 
-    if (dx !== 0 || dy !== 0) {
-        trailAngle = Math.atan2(dy, dx) * (180 / Math.PI);
-    }
+    const targetScale = Math.max(0.5, 1 - speed / 25);
+    currentScale += (targetScale - currentScale) * 0.15;
 
     let x = coords.x;
     let y = coords.y;
 
-    circles.forEach(circle => {
+    if (dx !== 0 || dy !== 0) {
+        trailAngle = Math.atan2(dy, dx) * (180 / Math.PI);
+    }    
+
+    let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+
+    circles.forEach((circle, index) => {
         circle.x += (x - circle.x) * 0.2;
         circle.y += (y - circle.y) * 0.2;
-
+        
+        const sizeScale = (1 - index * 0.05) * currentScale;
+        const radius = 30 * sizeScale;
+        
         circle.style.left = (circle.x - coords.x) + "px";
         circle.style.top = (circle.y - coords.y) + "px";
-        circle.style.transform = `translate(-50%, -50%) rotate(${trailAngle}deg) scale(1)`;
-
+        circle.style.transform = `translate(-50%, -50%) rotate(${trailAngle}deg) scale(${sizeScale})`;
+                
+        minX = Math.min(minX, circle.x - radius);
+        maxX = Math.max(maxX, circle.x + radius);
+        minY = Math.min(minY, circle.y - radius);
+        maxY = Math.max(maxY, circle.y + radius);
+        
         x = circle.x;
         y = circle.y;
     });
+
+    const wrapperWidth = maxX - minX + 20;
+    const wrapperHeight = maxY - minY + 20;
+    const wrapperX = (minX + maxX) / 2;
+    const wrapperY = (minY + maxY) / 2;
+
+    if (!hoveringCard) {
+        wrapper.style.width = wrapperWidth + "px";
+        wrapper.style.height = wrapperHeight + "px";
+        wrapper.style.left = wrapperX + "px";
+        wrapper.style.top = wrapperY + "px";
+    } else {
+        const currentRect = wrapper.getBoundingClientRect();
+    
+        const lerp = (a, b, t) => a + (b - a) * t;
+    
+        const padding = 15;
+        const newWidth = lerp(currentRect.width, cardTarget.width + padding, 0.15);
+        const newHeight = lerp(currentRect.height, cardTarget.height + padding, 0.15);
+        const newX = lerp(currentRect.left + currentRect.width / 2, cardTarget.x, 0.15);
+        const newY = lerp(currentRect.top + currentRect.height / 2, cardTarget.y, 0.15);
+    
+        wrapper.style.width = newWidth + "px";
+        wrapper.style.height = newHeight + "px";
+        wrapper.style.left = newX + "px";
+        wrapper.style.top = newY + "px";
+        
+    }
 
     lastMouse.x = coords.x;
     lastMouse.y = coords.y;
@@ -85,6 +127,5 @@ function animateCircles() {
 
     requestAnimationFrame(animateCircles);
 }
-
 
 animateCircles();
