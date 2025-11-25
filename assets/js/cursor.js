@@ -16,34 +16,18 @@ circles.forEach(c => {
     c.y = coords.y; 
 });
 
-let lastX = null;
-let lastY = null;
-
 window.addEventListener("mousemove", e => {
-    if (lastX === null) {
-        lastX = e.clientX;
-        lastY = e.clientY;
-        return;
-    }
+    coords.x = e.clientX;
+    coords.y = e.clientY;
 
-    const dx = e.clientX - lastX;
-    const dy = e.clientY - lastY;
-    const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
 
-    const w = window.innerWidth;
-    const h = window.innerHeight;
-    const mouseX = (e.clientX / w - 0.5) * 20;
-    const mouseY = (e.clientY / h - 0.5) * 20;
+    const mouseX = (e.clientX / windowWidth - 0.5) * 20;
+    const mouseY = (e.clientY / windowHeight - 0.5) * 20;
 
-    video.style.transform = `
-        translate(${mouseX}px, ${mouseY}px)
-        rotate(${angle}deg)
-    `;
-
-    lastX = e.clientX;
-    lastY = e.clientY;
+    video.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
 });
-
 
 
 document.querySelectorAll('button, .resume-button, .icons a').forEach(el => {
@@ -71,6 +55,9 @@ function animateCircles() {
     const dx = coords.x - lastMouse.x;
     const dy = coords.y - lastMouse.y;
     const speed = Math.hypot(dx, dy) / dt * 16;
+
+    const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+    wrapper.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
 
     const targetScale = Math.max(0.5, 1 - speed / 25);
     currentScale += (targetScale - currentScale) * 0.15;
