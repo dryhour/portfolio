@@ -114,10 +114,10 @@ function animateCircles() {
         const newX = lerp(currentRect.left + currentRect.width / 2, cardTarget.x, 0.15);
         const newY = lerp(currentRect.top + currentRect.height / 2, cardTarget.y, 0.15);
     
-        wrapper.style.width = newWidth + "px";
+        /* wrapper.style.width = newWidth + "px";
         wrapper.style.height = newHeight + "px";
         wrapper.style.left = newX + "px";
-        wrapper.style.top = newY + "px";
+        wrapper.style.top = newY + "px"; */
         
     }
 
