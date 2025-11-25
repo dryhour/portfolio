@@ -62,7 +62,7 @@ function animateCircles() {
         wrapperAngle = Math.atan2(dy, dx) * (180 / Math.PI);
     }
     
-    wrapper.style.transform = `translate(-50%, -50%) rotate(${wrapperAngle}deg)`;
+    // wrapper.style.transform = `translate(-50%, -50%) rotate(${wrapperAngle}deg)`;
     
 
     const targetScale = Math.max(0.5, 1 - speed / 25);
@@ -80,9 +80,9 @@ function animateCircles() {
         const sizeScale = (1 - index * 0.05) * currentScale;
         const radius = 30 * sizeScale;
         
-        circle.style.left = (circle.x - coords.x) + "px";
-        circle.style.top = (circle.y - coords.y) + "px";
-       //  circle.style.transform = `translate(-50%, -50%) scale(${sizeScale})`;
+        // circle.style.left = (circle.x - coords.x) + "px";
+        // circle.style.top = (circle.y - coords.y) + "px";
+        //  circle.style.transform = `translate(-50%, -50%) scale(${sizeScale})`;
         
         minX = Math.min(minX, circle.x - radius);
         maxX = Math.max(maxX, circle.x + radius);
@@ -127,8 +127,8 @@ function animateCircles() {
     innerCircle.style.height = innerSize + "px";
 
     // this keeps everything centered btw
-    innerCircle.style.left = "50%";
-    innerCircle.style.top = "50%";
+    // innerCircle.style.left = "50%";
+    // innerCircle.style.top = "50%";
     // innerCircle.style.transform = "translate(-50%, -50%)";
 
     lastMouse.x = coords.x;
