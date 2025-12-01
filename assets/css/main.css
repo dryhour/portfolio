@@ -1991,14 +1991,24 @@ input, select, textarea {
 	}
 
 
+	/* background-image: linear-gradient(to top right, #0291ff, #00579a, #0291ff); */
 	
 	.name-highlight {
-		background-image: linear-gradient(to top right, #0291ff, #00579a, #0291ff);
+		background-image: linear-gradient(to top right, #9102ff, #50009a, #ab02ff);
 		-webkit-background-clip: text;
 		background-clip: text;
 		color: transparent;
 		font-size: 130px;
 		font-weight: 700;
+	}
+
+	.divider-highlight {
+		background-image: linear-gradient(to top right, #9102ff, #ffffff, #ab02ff);
+		-webkit-background-clip: text;
+		background-clip: text;
+		color: transparent;
+		font-size: 50px;
+		font-weight: 500;
 	}
 	
 	header.major > :first-child:after {
