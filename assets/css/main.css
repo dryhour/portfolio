@@ -104,6 +104,98 @@ input, select, textarea {
 
 	/* ADDED CSS */
 
+	#skills {
+		margin: 2vh auto 15vh;
+		display: block;
+		padding: 10px;
+		cursor: default;
+		width: 65vw;
+		border-radius: 12px;
+		background-color: #000000;
+		border: 1px solid #121a2c;
+		color: white;
+		box-sizing: border-box;
+		animation: appear linear forwards;
+		animation-timeline: view();
+		animation-range: entry 5% exit 95%;
+	}
+	
+	.skills .skills-list {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		gap: 10px;
+		box-sizing: border-box;
+	}
+	
+	.skills-list li {
+		flex: 1 1 auto;
+		display: inline-flex;
+		flex-direction: row;
+		margin: 0vh 1px;
+		padding: 0;
+		min-width: 0;
+	}
+	
+	.skill {
+		display: inline-flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+		height: 5vh;
+		padding: 0px 15px;
+		border-radius: 5px;
+		background-color: #06090f;
+		border: 1px solid #121a2c;
+		color: white;
+		font-weight: 700;
+		font-size: 14px;
+		font-family: 'DM Mono', monospace;
+		white-space: nowrap;
+		box-sizing: border-box;
+		width: 100%;
+	}
+
+	#central {
+		margin-top: 10vh;
+		font-family: 'DM Mono', monospace;
+		-moz-align-items: center;
+		-webkit-align-items: center;
+		-ms-align-items: center;
+		align-items: center;
+		background-image: none;
+		background: transparent;
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		padding: 6em 0 2em 0 ;
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		cursor: default;
+		height: 10vh;
+		max-height: 25em;
+		min-height: 10em;
+		position: relative;
+		width: 100vw;
+	}
+	.inner-divider {
+		display: flex;
+		margin: 0 auto;
+		max-width: 100em;
+		animation: appear linear forwards;
+		animation-timeline: view();
+		animation-range: entry 5% exit 95%;
+	}
+
 	.cursor-wrapper {
 		position: fixed;
 		top: 0;
@@ -136,19 +228,21 @@ input, select, textarea {
 	}
 	
 	.carousel {
-		margin: 90px auto 0 auto;
-		width: 90%;
+		margin: 0vh auto 0 auto;
+		width: 65%;
 		display: flex;
 		overflow-x: auto;
+		font-family: 'DM Mono', monospace;
 		-webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
 		-webkit-mask-repeat: no-repeat;
 		-webkit-mask-size: 100% 100%;
 		mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
 		mask-repeat: no-repeat;
 		mask-size: 100% 100%;
-		animation: appear linear;
+		animation: appear linear forwards;
 		animation-timeline: view();
-		animation-range: entry 0% cover 25%;
+		animation-range: entry 5% exit 95%;
+		pointer-events: none;
 	}
 	
 	.carousel::-webkit-scrollbar {
@@ -197,8 +291,11 @@ input, select, textarea {
 		to {translate: -100%;}
 	}
 	@keyframes appear {
-		from {opacity: 0; scale: 0.5;}
-		to {opacity: 1; scale: 1;}
+		0% { opacity: 0; transform: scale(0.5); }
+		25% { opacity: 1; transform: scale(1); }
+		50% { opacity: 1; transform: scale(1); }
+		75% { opacity: 1; transform: scale(1); }
+		100% { opacity: 0; transform: scale(0.5); }
 	}
 	video {
 		position: fixed;
@@ -258,6 +355,19 @@ input, select, textarea {
 		list-style: none;
 		gap: 8px;
 	}
+
+	.icons-skills {
+		display: flex;
+		align-items: center;
+		height: 100%;
+		aspect-ratio: 1 / 1;
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		gap: 8px;
+	}
+
+	
 
 	.icon.brands.alt.fa-github::before,
 	.icon.brands.alt.fa-linkedin-in::before {
@@ -1994,7 +2104,7 @@ input, select, textarea {
 	/* background-image: linear-gradient(to top right, #0291ff, #00579a, #0291ff); */
 	
 	.name-highlight {
-		background-image: linear-gradient(to top right, #9102ff, #50009a, #ab02ff);
+		background-image: linear-gradient(to top right, #0291ff, #00579a, #0291ff);
 		-webkit-background-clip: text;
 		background-clip: text;
 		color: transparent;
@@ -2003,12 +2113,20 @@ input, select, textarea {
 	}
 
 	.divider-highlight {
-		background-image: linear-gradient(to top right, #9102ff, #ffffff, #ab02ff);
+		background-image: linear-gradient(to top right, #ffffff);
 		-webkit-background-clip: text;
 		background-clip: text;
 		color: transparent;
 		font-size: 50px;
-		font-weight: 500;
+		font-weight: 700;
+		text-align: center;
+	}
+
+	.divider-description {
+		color: #00579a;
+		font-size: 20px;
+		font-weight: 100;
+		text-align: center;
 	}
 	
 	header.major > :first-child:after {
@@ -2463,14 +2581,15 @@ input, select, textarea {
 			padding-left: 0.25em;
 		}
 
+
 	ul {
 		list-style: disc;
-		margin: 0 0 2em 0;
-		padding-left: 1em;
+		/* margin: 0 0 2em 0; */
+		/* padding-left: 1em; */
 	}
 
 		ul li {
-			padding-left: 0.5em;
+			/* padding-left: 0.5em; */
 		}
 
 		ul.alt {
@@ -2480,7 +2599,7 @@ input, select, textarea {
 
 			ul.alt li {
 				border-top: solid 1px rgba(212, 212, 255, 0.1);
-				padding: 0.5em 0;
+				/* padding: 0.5em 0; */
 			}
 
 				ul.alt li:first-child {
@@ -3644,7 +3763,8 @@ input, select, textarea {
 		background-size: cover;
 		cursor: default;
 		height: 75vh;
-		margin-bottom: -3.25em;
+		margin-bottom: -2.25em;
+		margin-top: 3.25em;
 		max-height: 32em;
 		min-height: 22em;
 		position: relative;
@@ -3681,6 +3801,9 @@ input, select, textarea {
 			padding: 0 !important;
 			position: relative;
 			z-index: 2;
+			animation: appear linear forwards;
+			animation-timeline: view();
+			animation-range: entry 25% exit 75%;
 		}
 
 			#banner > .inner .image {

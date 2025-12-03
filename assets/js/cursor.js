@@ -31,7 +31,7 @@ window.addEventListener("mousemove", e => {
 });
 
 
-document.querySelectorAll('button, .resume-button, .icons a').forEach(el => {
+document.querySelectorAll('button, .resume-button, .icons a, .skill').forEach(el => {
     el.addEventListener('mouseenter', () => {
         const rect = el.getBoundingClientRect();
         hoveringCard = true;
