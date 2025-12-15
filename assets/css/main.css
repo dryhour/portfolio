@@ -609,6 +609,18 @@ input, select, textarea {
 		animation-range: entry 5% exit 95%;
 	}
 
+	.placeholder {
+		display: flex;
+		margin: 0 auto;
+		height: 100%;
+		padding-top: 50%;
+		padding-bottom: 50%;
+		max-width: 100em;
+		animation: appear linear forwards;
+		animation-timeline: view();
+		animation-range: entry 5% exit 95%;
+	}
+
 	.cursor-wrapper {
 		position: fixed;
 		top: 0;
@@ -2525,7 +2537,7 @@ input, select, textarea {
 	/* background-image: linear-gradient(to top right, #0291ff, #00579a, #0291ff); */
 	
 	.name-highlight {
-		background-image: linear-gradient(to top right, #0291ff, #00579a, #0291ff);
+		background-image: linear-gradient(to top, #025fff, #0a47ee, #020fff);
 		-webkit-background-clip: text;
 		background-clip: text;
 		color: transparent;
