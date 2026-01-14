@@ -361,6 +361,21 @@ input, select, textarea {
 		
 	}
 
+	.text-highlight {
+		background-image: linear-gradient(
+			to left, 
+			#7b00ff, 
+			#003cff, 
+			#0080ff
+		);
+		-webkit-background-clip: text;
+		background-clip: text;
+		color: transparent;
+		font-weight: 900;
+		font-size: 20px;
+		text-align: left;
+	}
+
 	.detail-highlight {
 		background-image: linear-gradient(to top right, #ffffff, #c2d4e5);
 		-webkit-background-clip: text;
@@ -575,6 +590,31 @@ input, select, textarea {
 		padding: 0vh 0vh;
 	}
 	*/
+
+	#central2 {
+		margin-top: 10vh;
+		font-family: 'DM Mono', monospace;
+		-moz-align-items: center;
+		-webkit-align-items: center;
+		-ms-align-items: center;
+		align-items: center;
+		background-image: none;
+		background: transparent;
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		padding: 20em 0 20em 0 ;
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		cursor: default;
+		height: 10vh;
+		position: relative;
+		width: 100vw;
+	}
+
 	#central {
 		margin-top: 10vh;
 		font-family: 'DM Mono', monospace;
@@ -600,13 +640,30 @@ input, select, textarea {
 		position: relative;
 		width: 100vw;
 	}
+
 	.inner-divider {
 		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
 		margin: 0 auto;
 		max-width: 100em;
 		animation: appear linear forwards;
 		animation-timeline: view();
 		animation-range: entry 5% exit 95%;
+	}
+
+	.inner-divider2 {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		margin: 0 auto;
+		max-width: 50em;
+		animation: appear linear forwards;
+		animation-timeline: view();
+		animation-range: entry 5% exit 95%;
+		padding: 3rem 0;
 	}
 
 	.placeholder {
@@ -756,6 +813,25 @@ input, select, textarea {
 		background: transparent;
 		transform: translateY(20%);
 		box-sizing: border-box;
+	}
+
+	.face-button {
+		background: transparent;
+		border-radius: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5em;
+		height: 10vh;
+		width: fit-content;
+		font-weight: 700;
+		text-decoration: none;
+		font-size: 1.25rem;
+		transform: translateY(20%) scale(1.5) translateX(20%);
+	}
+	.face-button .icon {
+		width: 100%;
+		height: 10vh;
 	}
 	
 	.resume-button {
@@ -2560,6 +2636,18 @@ input, select, textarea {
 		font-size: 20px;
 		font-weight: 100;
 		text-align: center;
+	}
+	.divider-text {
+		color: #c2d4e5;
+		font-size: 20px;
+		font-weight: 100;
+		text-align: justify;
+	}
+	.divider-paragraph {
+		color: #bcc6cf;
+		font-size: 25px;
+		font-weight: 100;
+		text-align: left;
 	}
 	
 	header.major > :first-child:after {
